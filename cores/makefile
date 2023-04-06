@@ -1,7 +1,7 @@
 # this logic was broken out from picoarch's all-in-one makefile
 
 CORES = fceumm gambatte gpsp pcsx_rearmed picodrive snes9x2005_plus
-CORES+= beetle-pce-fast beetle-vb fake-08 mednafen_supafaust mgba pokemini # extras
+CORES+= beetle-pce-fast beetle-vb mednafen_supafaust mgba pokemini # extras
 
 ###############################
 
@@ -42,7 +42,7 @@ snes9x2005_plus_FLAGS = USE_BLARGG_APU=1
 
 ###############################
 
-PATCH = git apply
+PATCH = git apply --reject
 PROCS = -j4
 
 ###############################

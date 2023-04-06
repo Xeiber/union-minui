@@ -55,8 +55,8 @@
 #define USERDATA_PATH SDCARD_PATH "/.userdata/" PLATFORM
 #define PAKS_PATH SYSTEM_PATH "/paks"
 #define RECENT_PATH USERDATA_PATH "/.minui/recent.txt"
-#define FAUX_RECENT_PATH SDCARD_PATH "/Recently Played"
-#define COLLECTIONS_PATH SDCARD_PATH "/Collections"
+#define FAUX_RECENT_PATH SDCARD_PATH "/Jugados Recientemente"
+#define COLLECTIONS_PATH SDCARD_PATH "/Colecciones"
 
 #define LAST_PATH "/tmp/last.txt" // transient
 #define CHANGE_DISC_PATH "/tmp/change_disc.txt"

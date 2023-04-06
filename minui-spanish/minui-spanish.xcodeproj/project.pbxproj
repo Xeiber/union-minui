@@ -1,0 +1,92 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		69FDDBF229DF3795007D9AE6 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../src; sourceTree = "<group>"; };
+		69FDDBF329DF3795007D9AE6 /* notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = notes.txt; path = ../notes.txt; sourceTree = "<group>"; };
+		69FDDBF429DF3795007D9AE6 /* commits.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = commits.sh; path = ../commits.sh; sourceTree = "<group>"; };
+		69FDDBF529DF3795007D9AE6 /* todo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = todo.txt; path = ../todo.txt; sourceTree = "<group>"; };
+		69FDDBF629DF3795007D9AE6 /* other */ = {isa = PBXFileReference; lastKnownFileType = folder; name = other; path = ../other; sourceTree = "<group>"; };
+		69FDDBF729DF3795007D9AE6 /* cores */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cores; path = ../cores; sourceTree = "<group>"; };
+		69FDDBF829DF3795007D9AE6 /* skeleton */ = {isa = PBXFileReference; lastKnownFileType = folder; name = skeleton; path = ../skeleton; sourceTree = "<group>"; };
+		69FDDBF929DF3795007D9AE6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		69FDDBFB29DF3795007D9AE6 /* github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = github; path = ../github; sourceTree = "<group>"; };
+		69FDDBFD29DF37DF007D9AE6 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = makefile; path = ../makefile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		69FDDBDF29DF3781007D9AE6 = {
+			isa = PBXGroup;
+			children = (
+				69FDDBF729DF3795007D9AE6 /* cores */,
+				69FDDBFB29DF3795007D9AE6 /* github */,
+				69FDDBF629DF3795007D9AE6 /* other */,
+				69FDDBF829DF3795007D9AE6 /* skeleton */,
+				69FDDBF229DF3795007D9AE6 /* src */,
+				69FDDBF929DF3795007D9AE6 /* README.md */,
+				69FDDBF429DF3795007D9AE6 /* commits.sh */,
+				69FDDBF329DF3795007D9AE6 /* notes.txt */,
+				69FDDBF529DF3795007D9AE6 /* todo.txt */,
+				69FDDBFD29DF37DF007D9AE6 /* makefile */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		69FDDBE029DF3781007D9AE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 69FDDBE329DF3781007D9AE6 /* Build configuration list for PBXProject "minui-spanish" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69FDDBDF29DF3781007D9AE6;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		69FDDBE429DF3781007D9AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		69FDDBE529DF3781007D9AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69FDDBE329DF3781007D9AE6 /* Build configuration list for PBXProject "minui-spanish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69FDDBE429DF3781007D9AE6 /* Debug */,
+				69FDDBE529DF3781007D9AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69FDDBE029DF3781007D9AE6 /* Project object */;
+}

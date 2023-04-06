@@ -619,7 +619,7 @@ static Array* getRoot(void) {
 	}
 	Array_free(entries); // root now owns entries' entries
 	
-	char* tools_path = SDCARD_PATH "/Tools/" PLATFORM;
+	char* tools_path = SDCARD_PATH "/Herramientas/" PLATFORM;
 	if (exists(tools_path)) Array_push(root, Entry_new(tools_path, ENTRY_DIR));
 	
 	return root;
@@ -1387,14 +1387,14 @@ int main (int argc, char *argv[]) {
 				
 				// buttons (duped and trimmed from below)
 				if (show_setting) {
-					if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRIGHTNESS",  NULL }, screen, 0);
-					else GFX_blitButtonGroup((char*[]){ "MENU","BRIGHTNESS",  NULL }, screen, 0);
+					if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRILLO",  NULL }, screen, 0);
+					else GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"VOLUMEN",  NULL }, screen, 0);
 				}
 				else {
-					GFX_blitButtonGroup((char*[]){ "POWER","SLEEP",  NULL }, screen, 0);
+					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR",  NULL }, screen, 0);
 				}
 				
-				GFX_blitButtonGroup((char*[]){ "B","BACK",  NULL }, screen, 1);
+				GFX_blitButtonGroup((char*[]){ "B","ATRAS",  NULL }, screen, 1);
 			}
 			else {
 				// list
@@ -1460,27 +1460,27 @@ int main (int argc, char *argv[]) {
 			
 				// buttons
 				if (show_setting) {
-					if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRIGHTNESS",  NULL }, screen, 0);
-					else GFX_blitButtonGroup((char*[]){ "MENU","BRIGHTNESS",  NULL }, screen, 0);
+					if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRILLO",  NULL }, screen, 0);
+					else GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"VOLUMEN",  NULL }, screen, 0);
 				}
 				else if (can_resume) {
-					GFX_blitButtonGroup((char*[]){ "X","RESUME",  NULL }, screen, 0);
+					GFX_blitButtonGroup((char*[]){ "X","CONTINUAR",  NULL }, screen, 0);
 				}
 				else {
-					GFX_blitButtonGroup((char*[]){ "POWER","SLEEP",  NULL }, screen, 0);
+					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR",  NULL }, screen, 0);
 				}
 			
 				if (total==0) {
 					if (stack->count>1) {
-						GFX_blitButtonGroup((char*[]){ "B","BACK",  NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "B","ATRAS",  NULL }, screen, 1);
 					}
 				}
 				else {
 					if (stack->count>1) {
-						GFX_blitButtonGroup((char*[]){ "B","BACK", "A","OPEN", NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "B","ATRAS", "A","ABRIR", NULL }, screen, 1);
 					}
 					else {
-						GFX_blitButtonGroup((char*[]){ "A","OPEN", NULL }, screen, 1);
+						GFX_blitButtonGroup((char*[]){ "A","ABRIR", NULL }, screen, 1);
 					}
 				}
 			}

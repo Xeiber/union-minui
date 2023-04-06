@@ -666,7 +666,7 @@ static const char* device_button_names[LOCAL_BUTTON_COUNT] = {
 
 // NOTE: these must be in BTN_ID_ order also off by 1 because of NONE (which is -1 in BTN_ID_ land)
 static char* button_labels[] = {
-	"NONE", // displayed by default
+	"NINGUNO", // displayed by default
 	"UP",
 	"DOWN",
 	"LEFT",
@@ -684,7 +684,7 @@ static char* button_labels[] = {
 	NULL,
 };
 static char* shortcut_labels[] = {
-	"NONE", // displayed by default
+	"NINGUNO", // displayed by default
 	"UP",
 	"DOWN",
 	"LEFT",
@@ -743,7 +743,7 @@ static struct Config {
 		.options = (Option[]){
 			[FE_OPT_SCALING] = {
 				.key	= "minarch_screen_scaling", 
-				.name	= "Screen Scaling",
+				.name	= "Escalado de pantalla",
 				.desc	= "Native uses integer scaling. Aspect uses the core reported\naspect ratio. Fullscreen will produce non-square pixels. Gross.",
 				.default_value = 1,
 				.value = 1,
@@ -822,13 +822,13 @@ static struct Config {
 	},
 	.controls = default_button_mapping,
 	.shortcuts = (ButtonMapping[]){
-		[SHORTCUT_SAVE_STATE]			= {"Save State",		-1, BTN_ID_NONE, 0},
-		[SHORTCUT_LOAD_STATE]			= {"Load State",		-1, BTN_ID_NONE, 0},
-		[SHORTCUT_RESET_GAME]			= {"Reset Game",		-1, BTN_ID_NONE, 0},
-		[SHORTCUT_CYCLE_SCALE]			= {"Cycle Scaling",		-1, BTN_ID_NONE, 0},
-		[SHORTCUT_TOGGLE_SCANLINES]		= {"Toggle Scanlines",	-1, BTN_ID_NONE, 0},
-		[SHORTCUT_TOGGLE_FF]			= {"Toggle FF",			-1, BTN_ID_NONE, 0},
-		[SHORTCUT_HOLD_FF]				= {"Hold FF",			-1, BTN_ID_NONE, 0},
+		[SHORTCUT_SAVE_STATE]			= {"Guardar estado",		-1, BTN_ID_NONE, 0},
+		[SHORTCUT_LOAD_STATE]			= {"Cargar estado",		-1, BTN_ID_NONE, 0},
+		[SHORTCUT_RESET_GAME]			= {"Reiniciar juego",		-1, BTN_ID_NONE, 0},
+		[SHORTCUT_CYCLE_SCALE]			= {"Cambiar Escalado",		-1, BTN_ID_NONE, 0},
+		[SHORTCUT_TOGGLE_SCANLINES]		= {"Alternar Scanlines",	-1, BTN_ID_NONE, 0},
+		[SHORTCUT_TOGGLE_FF]			= {"Alternar FF",			-1, BTN_ID_NONE, 0},
+		[SHORTCUT_HOLD_FF]				= {"Mantener FF",			-1, BTN_ID_NONE, 0},
 		{NULL}
 	},
 };
@@ -2966,11 +2966,11 @@ static struct {
 	int slot;
 } menu = {
 	.items = {
-		[ITEM_CONT] = "Continue",
-		[ITEM_SAVE] = "Save",
-		[ITEM_LOAD] = "Load",
-		[ITEM_OPTS] = "Options",
-		[ITEM_QUIT] = "Quit",
+		[ITEM_CONT] = "Continuar",
+		[ITEM_SAVE] = "Guardar",
+		[ITEM_LOAD] = "Cargar",
+		[ITEM_OPTS] = "Opciones",
+		[ITEM_QUIT] = "Salir",
 	}
 };
 
@@ -3367,18 +3367,18 @@ static int OptionSaveChanges_onConfirm(MenuList* list, int i) {
 	switch (i) {
 		case 0: {
 			Config_write(CONFIG_WRITE_ALL);
-			message = "Saved for console.";
+			message = "Guardado para la consola.";
 			break;
 		}
 		case 1: {
 			Config_write(CONFIG_WRITE_GAME);
-			message = "Saved for game.";
+			message = "Guardado para el juego.";
 			break;
 		}
 		default: {
 			Config_restore();
-			if (config.loaded) message = "Restored console defaults.";
-			else message = "Restored defaults.";
+			if (config.loaded) message = "Valores predeterminados consola restaurados.";
+			else message = "Valores predeterminados restaurados.";
 			break;
 		}
 	}
@@ -3390,9 +3390,9 @@ static MenuList OptionSaveChanges_menu = {
 	.type = MENU_LIST,
 	.on_confirm = OptionSaveChanges_onConfirm,
 	.items = (MenuItem[]){
-		{"Save for console"},
-		{"Save for game"},
-		{"Restore defaults"},
+		{"Guardar para la consola"},
+		{"Guardar para el juego"},
+		{"Restaurar predeterminados"},
 		{NULL},
 	}
 };
@@ -3406,11 +3406,11 @@ static int OptionSaveChanges_openMenu(MenuList* list, int i) {
 static MenuList options_menu = {
 	.type = MENU_LIST,
 	.items = (MenuItem[]) {
-		{"Frontend", "MinUI (" BUILD_DATE " " BUILD_HASH ")",.on_confirm=OptionFrontend_openMenu},
-		{"Emulator",.on_confirm=OptionEmulator_openMenu},
-		{"Controls",.on_confirm=OptionControls_openMenu},
-		{"Shortcuts",.on_confirm=OptionShortcuts_openMenu}, 
-		{"Save Changes",.on_confirm=OptionSaveChanges_openMenu},
+		{"Interfaz", "MinUI (" BUILD_DATE " " BUILD_HASH ")",.on_confirm=OptionFrontend_openMenu},
+		{"Emulador",.on_confirm=OptionEmulator_openMenu},
+		{"Controles",.on_confirm=OptionControls_openMenu},
+		{"Atajos",.on_confirm=OptionShortcuts_openMenu}, 
+		{"Guardar cambios",.on_confirm=OptionSaveChanges_openMenu},
 		{NULL},
 	}
 };
@@ -4083,11 +4083,11 @@ static void Menu_loop(void) {
 			SDL_FreeSurface(text);
 			
 			if (show_setting) {
-				if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRIGHTNESS",  NULL }, screen, 0);
-				else GFX_blitButtonGroup((char*[]){ "MENU","BRIGHTNESS",  NULL }, screen, 0);
+				if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRILLO",  NULL }, screen, 0);
+				else GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"VOLUMEN",  NULL }, screen, 0);
 			}
-			else GFX_blitButtonGroup((char*[]){ "POWER","SLEEP", NULL }, screen, 0);
-			GFX_blitButtonGroup((char*[]){ "B","BACK", "A","OKAY", NULL }, screen, 1);
+			else GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR", NULL }, screen, 0);
+			GFX_blitButtonGroup((char*[]){ "B","ATRAS", "A","OKAY", NULL }, screen, 1);
 			
 			// list
 			oy = 35;
@@ -4168,10 +4168,10 @@ static void Menu_loop(void) {
 					SDL_Rect preview_rect = {SCALE2(ox,oy),hw,hh};
 					SDL_FillRect(screen, &preview_rect, 0);
 					if (save_exists) { // has save but no preview
-						GFX_blitMessage(font.large, "No Preview", screen, &preview_rect);
+						GFX_blitMessage(font.large, "No hay vista previa", screen, &preview_rect);
 					}
 					else { // no save
-						GFX_blitMessage(font.large, "Empty Slot", screen, &preview_rect);
+						GFX_blitMessage(font.large, "Ranura vacia", screen, &preview_rect);
 					}
 				}
 				

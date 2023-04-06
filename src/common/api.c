@@ -1525,7 +1525,7 @@ void POW_disablePowerOff(void) {
 }
 void POW_powerOff(void) {
 	if (pow.can_poweroff) {
-		char* msg = exists(AUTO_RESUME_PATH) ? "Quicksave created,\npowering off" : "Powering off";
+		char* msg = exists(AUTO_RESUME_PATH) ? "Guardado rápido creado,\napagando" : "Apagando";
 		GFX_clear(gfx.screen);
 		GFX_blitMessage(font.large, msg, gfx.screen, NULL);
 		GFX_flip(gfx.screen);
