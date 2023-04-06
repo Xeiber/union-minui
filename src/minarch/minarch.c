@@ -541,24 +541,24 @@ typedef struct OptionList {
 } OptionList;
 
 static char* onoff_labels[] = {
-	"Off",
-	"On",
+	"Apagado",
+	"Encendido",
 	NULL
 };
 static char* scaling_labels[] = {
-	"Native",
+	"Nativo",
 	"Aspect",
-	"Fullscreen",
+	"Pantalla completa",
 	NULL
 };
 static char* tearing_labels[] = {
-	"Off",
-	"Lenient",
-	"Strict",
+	"Apagado",
+	"Permisivo",
+	"Estricto",
 	NULL
 };
 static char* max_ff_labels[] = {
-	"None",
+	"Ninguno",
 	"2x",
 	"3x",
 	"4x",
@@ -606,26 +606,26 @@ typedef struct ButtonMapping {
 } ButtonMapping;
 
 static ButtonMapping default_button_mapping[] = { // used if pak.cfg doesn't exist or doesn't have bindings
-	{"Up",			RETRO_DEVICE_ID_JOYPAD_UP,		BTN_ID_UP},
-	{"Down",		RETRO_DEVICE_ID_JOYPAD_DOWN,	BTN_ID_DOWN},
-	{"Left",		RETRO_DEVICE_ID_JOYPAD_LEFT,	BTN_ID_LEFT},
-	{"Right",		RETRO_DEVICE_ID_JOYPAD_RIGHT,	BTN_ID_RIGHT},
-	{"A Button",	RETRO_DEVICE_ID_JOYPAD_A,		BTN_ID_A},
-	{"B Button",	RETRO_DEVICE_ID_JOYPAD_B,		BTN_ID_B},
-	{"X Button",	RETRO_DEVICE_ID_JOYPAD_X,		BTN_ID_X},
-	{"Y Button",	RETRO_DEVICE_ID_JOYPAD_Y,		BTN_ID_Y},
+	{"Arriba",			RETRO_DEVICE_ID_JOYPAD_UP,		BTN_ID_UP},
+	{"Abajo",		RETRO_DEVICE_ID_JOYPAD_DOWN,	BTN_ID_DOWN},
+	{"Izquierda",		RETRO_DEVICE_ID_JOYPAD_LEFT,	BTN_ID_LEFT},
+	{"Derecha",		RETRO_DEVICE_ID_JOYPAD_RIGHT,	BTN_ID_RIGHT},
+	{"Botón A",	RETRO_DEVICE_ID_JOYPAD_A,		BTN_ID_A},
+	{"Botón B",	RETRO_DEVICE_ID_JOYPAD_B,		BTN_ID_B},
+	{"Botón X",	RETRO_DEVICE_ID_JOYPAD_X,		BTN_ID_X},
+	{"Botón Y",	RETRO_DEVICE_ID_JOYPAD_Y,		BTN_ID_Y},
 	{"Start",		RETRO_DEVICE_ID_JOYPAD_START,	BTN_ID_START},
 	{"Select",		RETRO_DEVICE_ID_JOYPAD_SELECT,	BTN_ID_SELECT},
-	{"L1 Button",	RETRO_DEVICE_ID_JOYPAD_L,		BTN_ID_L1},
-	{"R1 Button",	RETRO_DEVICE_ID_JOYPAD_R,		BTN_ID_R1},
-	{"L2 Button",	RETRO_DEVICE_ID_JOYPAD_L2,		BTN_ID_L2},
-	{"R2 Button",	RETRO_DEVICE_ID_JOYPAD_R2,		BTN_ID_R2},
-	{"L3 Button",	RETRO_DEVICE_ID_JOYPAD_L3,		BTN_ID_NONE},
-	{"R3 Button",	RETRO_DEVICE_ID_JOYPAD_R3,		BTN_ID_NONE},
+	{"Botón L1",	RETRO_DEVICE_ID_JOYPAD_L,		BTN_ID_L1},
+	{"Botón R1",	RETRO_DEVICE_ID_JOYPAD_R,		BTN_ID_R1},
+	{"Botón L2",	RETRO_DEVICE_ID_JOYPAD_L2,		BTN_ID_L2},
+	{"Botón R2",	RETRO_DEVICE_ID_JOYPAD_R2,		BTN_ID_R2},
+	{"Botón L3",	RETRO_DEVICE_ID_JOYPAD_L3,		BTN_ID_NONE},
+	{"Botón R3",	RETRO_DEVICE_ID_JOYPAD_R3,		BTN_ID_NONE},
 	{NULL,0,0}
 };
 static ButtonMapping button_label_mapping[] = { // used to lookup the retro_id and local btn_id from button name
-	{"NONE",	-1,								BTN_ID_NONE},
+	{"NINGUNO",	-1,								BTN_ID_NONE},
 	{"UP",		RETRO_DEVICE_ID_JOYPAD_UP,		BTN_ID_UP},
 	{"DOWN",	RETRO_DEVICE_ID_JOYPAD_DOWN,	BTN_ID_DOWN},
 	{"LEFT",	RETRO_DEVICE_ID_JOYPAD_LEFT,	BTN_ID_LEFT},
@@ -647,10 +647,10 @@ static ButtonMapping button_label_mapping[] = { // used to lookup the retro_id a
 static ButtonMapping core_button_mapping[RETRO_BUTTON_COUNT+1] = {0};
 
 static const char* device_button_names[LOCAL_BUTTON_COUNT] = {
-	[BTN_ID_UP]		= "UP",
-	[BTN_ID_DOWN]	= "DOWN",
-	[BTN_ID_LEFT]	= "LEFT",
-	[BTN_ID_RIGHT]	= "RIGHT",
+	[BTN_ID_UP]		= "ARRIBA",
+	[BTN_ID_DOWN]	= "ABAJO",
+	[BTN_ID_LEFT]	= "IZQUIERDA",
+	[BTN_ID_RIGHT]	= "DERECHA",
 	[BTN_ID_SELECT]	= "SELECT",
 	[BTN_ID_START]	= "START",
 	[BTN_ID_Y]		= "Y",
@@ -667,10 +667,10 @@ static const char* device_button_names[LOCAL_BUTTON_COUNT] = {
 // NOTE: these must be in BTN_ID_ order also off by 1 because of NONE (which is -1 in BTN_ID_ land)
 static char* button_labels[] = {
 	"NINGUNO", // displayed by default
-	"UP",
-	"DOWN",
-	"LEFT",
-	"RIGHT",
+	"ARRIBA",
+	"ABAJO",
+	"IZQUIERDA",
+	"DERECHA",
 	"A",
 	"B",
 	"X",
@@ -685,10 +685,10 @@ static char* button_labels[] = {
 };
 static char* shortcut_labels[] = {
 	"NINGUNO", // displayed by default
-	"UP",
-	"DOWN",
-	"LEFT",
-	"RIGHT",
+	"ARRIBA",
+	"ABAJO",
+	"IZQUIERDA",
+	"DERECHA",
 	"A",
 	"B",
 	"X",
@@ -699,10 +699,10 @@ static char* shortcut_labels[] = {
 	"R1",
 	"L2",
 	"R2",
-	"MENU+UP",
-	"MENU+DOWN",
-	"MENU+LEFT",
-	"MENU+RIGHT",
+	"MENU+ARRIBA",
+	"MENU+ABAJO",
+	"MENU+IZQUIERDA",
+	"MENU+DERECHA",
 	"MENU+A",
 	"MENU+B",
 	"MENU+X",
@@ -716,9 +716,9 @@ static char* shortcut_labels[] = {
 	NULL,
 };
 static char* overclock_labels[] = {
-	"Powersave",
+	"Ahorro de energía",
 	"Normal",
-	"Performance",
+	"Rendimiento",
 	NULL,
 };
 
@@ -744,7 +744,7 @@ static struct Config {
 			[FE_OPT_SCALING] = {
 				.key	= "minarch_screen_scaling", 
 				.name	= "Escalado de pantalla",
-				.desc	= "Native uses integer scaling. Aspect uses the core reported\naspect ratio. Fullscreen will produce non-square pixels. Gross.",
+				.desc	= "En Nativo usa integer scaling. Aspect usa el Aspect ratio\n indicado por el core. Pantalla completa prodducira pixeles no cuadrados.",
 				.default_value = 1,
 				.value = 1,
 				.count = 3,
@@ -754,7 +754,7 @@ static struct Config {
 			[FE_OPT_SCANLINES] = {
 				.key	= "minarch_scanlines_grid", 
 				.name	= "Scanlines/Grid",
-				.desc	= "Simulate scanlines (or a pixel grid at odd scales).\nOnly applies to native scaling.",
+				.desc	= "Simula scanlines (o una rejilla de pixeles en escalas impares).\nSólo se aplica al escalado nativo.",
 				.default_value = 0,
 				.value = 0,
 				.count = 2,
@@ -763,8 +763,8 @@ static struct Config {
 			},
 			[FE_OPT_TEXT] = {
 				.key	= "minarch_optimize_text", 
-				.name	= "Optimize Text",
-				.desc	= "Prioritize a consistent stroke width when upscaling single\npixel lines using nearest neighbor scaler. Increases CPU load.\nOnly applies to native scaling.",
+				.name	= "Optimizar Texto",
+				.desc	= "Prioriza un ancho de trazo consistente al aumentar el tamaño\nde líneas de un solo píxel mediante el escalador de vecinos más cercanos.\nEsto aumenta la carga de la CPU. Solo se aplica al escalado nativo.",
 				.default_value = 0,
 				.value = 0,
 				.count = 2,
@@ -773,8 +773,8 @@ static struct Config {
 			},
 			[FE_OPT_TEARING] = {
 				.key	= "minarch_prevent_tearing",
-				.name	= "Prevent Tearing",
-				.desc	= "Wait for vsync before drawing the next frame. Lenient\nonly waits when within frame budget. Strict always waits.",
+				.name	= "Prevenir Tearing",
+				.desc	= "Espera la sincronización vertical antes de dibujar el siguiente fotograma.\nLa opción permisiva solo espera cuando se encuentra dentro del presupuesto de fotogramas.\nLa opción estricta siempre espera.",
 				.default_value = VSYNC_LENIENT,
 				.value = VSYNC_LENIENT,
 				.count = 3,
@@ -783,8 +783,8 @@ static struct Config {
 			},
 			[FE_OPT_OVERCLOCK] = {
 				.key	= "minarch_cpu_speed",
-				.name	= "CPU Speed",
-				.desc	= "Over- or underclock the CPU to prioritize\npure performance or power savings.",
+				.name	= "Velocidad CPU",
+				.desc	= "Ajusta el reloj del CPU por encima o por debajo de lo normal\npara priorizar un rendimiento puro o ahorro de energía.",
 				.default_value = 1,
 				.value = 1,
 				.count = 3,
@@ -794,7 +794,7 @@ static struct Config {
 			[FE_OPT_DEBUG] = {
 				.key	= "minarch_debug_hud",
 				.name	= "Debug HUD",
-				.desc	= "Show frames per second, cpu load,\nresolution, and scaler information.",
+				.desc	= "Mostrar cuadros por segundo, carga de la CPU, resolución e información del escalador.",
 				.default_value = 0,
 				.value = 0,
 				.count = 2,
@@ -803,8 +803,8 @@ static struct Config {
 			},
 			[FE_OPT_MAXFF] = {
 				.key	= "minarch_max_ff_speed",
-				.name	= "Max FF Speed",
-				.desc	= "Fast forward will not exceed the selected speed\n(but may be less than depending on game and emulator).",
+				.name	= "Máxima Velocidad FF",
+				.desc	= "El avance rápido no superará la velocidad seleccionada\n(pero puede ser menor dependiendo del juego y el emulador).",
 				.default_value = 3, // 4x
 				.value = 3, // 4x
 				.count = 8,
@@ -3204,7 +3204,7 @@ static int OptionEmulator_openMenu(MenuList* list, int i) {
 		Menu_options(&OptionEmulator_menu);
 	}
 	else {
-		Menu_message("This core has no options.", (char*[]){ "B","BACK", NULL });
+		Menu_message("Este núcleo no tiene opciones.", (char*[]){ "B","ATRAS", NULL });
 	}
 	
 	return MENU_CALLBACK_NOP;
@@ -3241,7 +3241,7 @@ static int OptionControls_unbind(MenuList* list, int i) {
 }
 static MenuList OptionControls_menu = {
 	.type = MENU_INPUT,
-	.desc = "Press A to set and X to clear.",
+	.desc = "Presiona A para establecer y X para borrar.",
 	.on_confirm = OptionControls_bind,
 	.on_change = OptionControls_unbind,
 	.items = NULL
@@ -3320,16 +3320,16 @@ static int OptionShortcuts_unbind(MenuList* list, int i) {
 }
 static MenuList OptionShortcuts_menu = {
 	.type = MENU_INPUT,
-	.desc = "Press A to set and X to clear.\nSupports single button and MENU+button.",
+	.desc = "Presiona A para establecer y X para borrar.\nAdmite un botón único y MENU + botón.",
 	.on_confirm = OptionShortcuts_bind,
 	.on_change = OptionShortcuts_unbind,
 	.items = NULL
 };
 static char* getSaveDesc(void) {
 	switch (config.loaded) {
-		case CONFIG_NONE:		return "Using defaults."; break;
-		case CONFIG_CONSOLE:	return "Using console config."; break;
-		case CONFIG_GAME:		return "Using game config."; break;
+		case CONFIG_NONE:		return "Usando los valores predeterminados."; break;
+		case CONFIG_CONSOLE:	return "Usando la configuración de la consola."; break;
+		case CONFIG_GAME:		return "Usando la configuración del juego."; break;
 	}
 	return NULL;
 }
@@ -4086,7 +4086,7 @@ static void Menu_loop(void) {
 				if (show_setting==1) GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"BRILLO",  NULL }, screen, 0);
 				else GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"VOLUMEN",  NULL }, screen, 0);
 			}
-			else GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR", NULL }, screen, 0);
+			else GFX_blitButtonGroup((char*[]){ "ENCENDIDO","APAGADO", NULL }, screen, 0);
 			GFX_blitButtonGroup((char*[]){ "B","ATRAS", "A","OKAY", NULL }, screen, 1);
 			
 			// list

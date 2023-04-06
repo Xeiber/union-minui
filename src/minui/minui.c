@@ -1340,7 +1340,7 @@ int main (int argc, char *argv[]) {
 					tmp[0] = '\0';
 					
 					// TODO: platform specific...
-					char* extra_key = "Model";
+					char* extra_key = "Modelo";
 					char* extra_val = "Anbernic RG35XX";
 					
 					SDL_Surface* release_txt = TTF_RenderUTF8_Blended(font.large, "Release", COLOR_DARK_TEXT);
@@ -1391,7 +1391,7 @@ int main (int argc, char *argv[]) {
 					else GFX_blitButtonGroup((char*[]){ BRIGHTNESS_BUTTON_LABEL,"VOLUMEN",  NULL }, screen, 0);
 				}
 				else {
-					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR",  NULL }, screen, 0);
+					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","APAGADO",  NULL }, screen, 0);
 				}
 				
 				GFX_blitButtonGroup((char*[]){ "B","ATRAS",  NULL }, screen, 1);
@@ -1455,7 +1455,7 @@ int main (int argc, char *argv[]) {
 					}
 				}
 				else {
-					GFX_blitMessage(font.large, "Empty folder", screen, NULL);
+					GFX_blitMessage(font.large, "Carpeta vacía", screen, NULL);
 				}
 			
 				// buttons
@@ -1467,7 +1467,7 @@ int main (int argc, char *argv[]) {
 					GFX_blitButtonGroup((char*[]){ "X","CONTINUAR",  NULL }, screen, 0);
 				}
 				else {
-					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","HIBERNAR",  NULL }, screen, 0);
+					GFX_blitButtonGroup((char*[]){ "ENCENDIDO","APAGAR",  NULL }, screen, 0);
 				}
 			
 				if (total==0) {
